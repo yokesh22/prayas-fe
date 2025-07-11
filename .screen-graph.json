@@ -1,0 +1,258 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/Home/Home.tsx",
+      "label": "Home",
+      "routes": [
+        "/"
+      ],
+      "dataModelId": "95:44",
+      "isRoot": true
+    },
+    {
+      "id": "src/routes/AboutUs/screens/AboutUs.tsx",
+      "label": "AboutUs",
+      "routes": [
+        "/about"
+      ]
+    },
+    {
+      "id": "src/routes/ExhibitorsPage/screens/ExhibitorsPage.tsx",
+      "label": "ExhibitorsPage",
+      "routes": [
+        "/exhibitors"
+      ]
+    },
+    {
+      "id": "src/routes/Registration/screens/Registration.tsx",
+      "label": "Registration",
+      "routes": [
+        "/registration"
+      ]
+    },
+    {
+      "id": "src/routes/TermsConditions/screens/TermsConditions.tsx",
+      "label": "TermsConditions",
+      "routes": [
+        "/terms-conditions"
+      ]
+    },
+    {
+      "id": "src/routes/PrivacyPolicy/screens/PrivacyPolicy.tsx",
+      "label": "PrivacyPolicy",
+      "routes": [
+        "/privacy-policy"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx:60:10-to-src/screens/Home/Home.tsx",
+      "source": "src/screens/Home/Home.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Prayas Logo\"\n              sx={{ height: 42 }}\n            />\n          </Link>",
+          "line": 60,
+          "endLine": 67,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx:105:10-to-src/routes/Registration/screens/Registration.tsx",
+      "source": "src/screens/Home/Home.tsx",
+      "target": "src/routes/Registration/screens/Registration.tsx",
+      "data": {
+        "viaRoute": "/registration",
+        "trigger": {
+          "element": "<Button\n            variant=\"contained\"\n            component={Link}\n            to=\"/registration\"\n            sx={{\n              bgcolor: \"#ffcb13\",\n              color: \"#12462d\",\n              fontWeight: 700,\n              fontSize: 12,\n              borderRadius: 2,\n              \"&:hover\": {\n                bgcolor: \"#e6b700\",\n              },\n            }}\n          >\n            REGISTER\n          </Button>",
+          "line": 105,
+          "endLine": 121,
+          "column": 10,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx:156:10-to-src/screens/Home/Home.tsx",
+      "source": "src/screens/Home/Home.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" style={{ textDecoration: 'none' }}>\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Logo\"\n              sx={{ \n                width: 240.25, \n                height: 81\n              }}\n            />\n          </Link>",
+          "line": 156,
+          "endLine": 166,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx:245:14-to-src/routes/Registration/screens/Registration.tsx",
+      "source": "src/screens/Home/Home.tsx",
+      "target": "src/routes/Registration/screens/Registration.tsx",
+      "data": {
+        "viaRoute": "/registration",
+        "trigger": {
+          "element": "<Button\n                variant=\"contained\"\n                color=\"primary\"\n                component={Link}\n                to=\"/registration\"\n                sx={{\n                  bgcolor: \"secondary.main\",\n                  color: \"primary.main\",\n                  fontFamily: \"'Funnel_Sans', Helvetica\",\n                  fontWeight: \"bold\",\n                  fontSize: \"16px\",\n                  lineHeight: \"21.8px\",\n                  borderRadius: \"8px\",\n                  py: 0.625,\n                  px: 1.875,\n                  whiteSpace: \"nowrap\",\n                  textDecoration: \"none\",\n                }}\n              >\n                REGISTER NOW\n              </Button>",
+          "line": 245,
+          "endLine": 265,
+          "column": 14,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Home/sections/EventHighlightsSection/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Home/sections/GlimpsesFromPravasa2024Section/GlimpsesFromPravasa2024Section.tsx:89:8-to-src/routes/Registration/screens/Registration.tsx",
+      "source": "src/screens/Home/Home.tsx",
+      "target": "src/routes/Registration/screens/Registration.tsx",
+      "data": {
+        "viaRoute": "/registration",
+        "trigger": {
+          "element": "<Button\n          variant=\"contained\"\n          color=\"secondary\"\n          component={Link}\n          to=\"/registration\"\n          sx={{\n            width: \"200px\",\n            height: \"50px\",\n            borderRadius: \"8px\",\n            fontWeight: \"bold\",\n            fontSize: \"1.25rem\",\n            color: \"primary.main\",\n            textTransform: \"uppercase\",\n            textDecoration: \"none\",\n          }}\n        >\n          REGISTER NOW\n        </Button>",
+          "line": 89,
+          "endLine": 106,
+          "column": 8,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Home/sections/GlimpsesFromPravasa2024Section/GlimpsesFromPravasa2024Section.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx:50:10-to-src/screens/Home/Home.tsx",
+      "source": "src/routes/AboutUs/screens/AboutUs.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Logo\"\n              sx={{ \n                width: { xs: 180, sm: 240.25 }, \n                height: { xs: 60, sm: 81 }\n              }}\n            />\n          </Link>",
+          "line": 50,
+          "endLine": 60,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/ExhibitorsPage/screens/sections/EventHighlightsSection.tsx:52:10-to-src/screens/Home/Home.tsx",
+      "source": "src/routes/ExhibitorsPage/screens/ExhibitorsPage.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" style={{ textDecoration: 'none' }}>\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Logo\"\n              sx={{ \n                width: { xs: 180, sm: 240.25 }, \n                height: { xs: 60, sm: 81 }\n              }}\n            />\n          </Link>",
+          "line": 52,
+          "endLine": 62,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/routes/ExhibitorsPage/screens/sections/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/ExhibitorsPage/screens/sections/EventHighlightsSection.tsx:142:14-to-src/routes/Registration/screens/Registration.tsx",
+      "source": "src/routes/ExhibitorsPage/screens/ExhibitorsPage.tsx",
+      "target": "src/routes/Registration/screens/Registration.tsx",
+      "data": {
+        "viaRoute": "/registration",
+        "trigger": {
+          "element": "<Button\n                variant=\"contained\"\n                color=\"primary\"\n                component={Link}\n                to=\"/registration\"\n                sx={{\n                  bgcolor: \"secondary.main\",\n                  color: \"primary.main\",\n                  fontFamily: \"'Funnel_Sans', Helvetica\",\n                  fontWeight: \"bold\",\n                  fontSize: \"16px\",\n                  lineHeight: \"21.8px\",\n                  borderRadius: \"8px\",\n                  py: 0.625,\n                  px: 1.875,\n                  whiteSpace: \"nowrap\",\n                  textDecoration: \"none\",\n                }}\n              >\n                REGISTER NOW\n              </Button>",
+          "line": 142,
+          "endLine": 162,
+          "column": 14,
+          "endColumn": 23,
+          "sourceFile": "src/routes/ExhibitorsPage/screens/sections/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/ExhibitorsPage/screens/sections/EventHighlightsSection.tsx:177:12-to-src/routes/Registration/screens/Registration.tsx",
+      "source": "src/routes/ExhibitorsPage/screens/ExhibitorsPage.tsx",
+      "target": "src/routes/Registration/screens/Registration.tsx",
+      "data": {
+        "viaRoute": "/registration",
+        "trigger": {
+          "element": "<Button\n              variant=\"contained\"\n              color=\"primary\"\n              component={Link}\n              to=\"/registration\"\n              size=\"small\"\n              sx={{\n                bgcolor: \"secondary.main\",\n                color: \"primary.main\",\n                fontFamily: \"'Funnel_Sans', Helvetica\",\n                fontWeight: \"bold\",\n                fontSize: \"14px\",\n                borderRadius: \"8px\",\n                py: 0.5,\n                px: 1.5,\n                whiteSpace: \"nowrap\",\n                textDecoration: \"none\",\n              }}\n            >\n              REGISTER\n            </Button>",
+          "line": 177,
+          "endLine": 197,
+          "column": 12,
+          "endColumn": 21,
+          "sourceFile": "src/routes/ExhibitorsPage/screens/sections/EventHighlightsSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/Registration/screens/Registration.tsx:37:14-to-src/screens/Home/Home.tsx",
+      "source": "src/routes/Registration/screens/Registration.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<IconButton\n                edge=\"start\"\n                color=\"inherit\"\n                aria-label=\"menu\"\n                component={Link}\n                to=\"/\"\n                sx={{ mr: 1 }}\n              >\n                <ArrowBackIcon />\n              </IconButton>",
+          "line": 37,
+          "endLine": 46,
+          "column": 14,
+          "endColumn": 27,
+          "sourceFile": "src/routes/Registration/screens/Registration.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx:50:10-to-src/screens/Home/Home.tsx",
+      "source": "src/routes/AboutUs/screens/AboutUs.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Logo\"\n              sx={{ \n                width: { xs: 180, sm: 240.25 }, \n                height: { xs: 60, sm: 81 }\n              }}\n            />\n          </Link>",
+          "line": 50,
+          "endLine": 60,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx:50:10-to-src/screens/Home/Home.tsx",
+      "source": "src/routes/AboutUs/screens/AboutUs.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Logo\"\n              sx={{ \n                width: { xs: 180, sm: 240.25 }, \n                height: { xs: 60, sm: 81 }\n              }}\n            />\n          </Link>",
+          "line": 50,
+          "endLine": 60,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx:50:10-to-src/screens/Home/Home.tsx",
+      "source": "src/routes/AboutUs/screens/AboutUs.tsx",
+      "target": "src/screens/Home/Home.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n            <Box\n              component=\"img\"\n              src=\"https://c.animaapp.com/JdgpojVL/img/group-12.svg\"\n              alt=\"Logo\"\n              sx={{ \n                width: { xs: 180, sm: 240.25 }, \n                height: { xs: 60, sm: 81 }\n              }}\n            />\n          </Link>",
+          "line": 50,
+          "endLine": 60,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/routes/Registration/screens/sections/RegistrationHeaderSection.tsx"
+        }
+      }
+    }
+  ]
+}
