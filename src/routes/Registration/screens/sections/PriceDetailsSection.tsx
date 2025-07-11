@@ -96,8 +96,8 @@ export const PriceDetailsSection: React.FC = () => {
       visitors: visitorData,
     };
     console.log("Payload to be sent:", payload);
-    // const response = await axios.post("http://localhost:5002/api/register", payload);
-    const response = await axios.post("https://prayas-api.i4ulabs.com/api/register", payload);
+    const response = await axios.post("http://localhost:5002/api/register", payload);
+    // const response = await axios.post("https://prayas-api.i4ulabs.com/api/register", payload);
 
     if (response.status === 200) {
       // Navigate on success
