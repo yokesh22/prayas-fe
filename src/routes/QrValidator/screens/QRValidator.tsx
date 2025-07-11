@@ -64,7 +64,14 @@ export const QRScanner: React.FC = () => {
     }
 
     try {
-      const res = await axios.get('http://localhost:5002/api/validateQR', {
+    //   const res = await axios.get('http://localhost:5002/api/validateQR', {
+    //     params: {
+    //       encrypted: encodeURIComponent(qrResult),
+    //       mobile,
+    //     },
+    //   });
+
+    const res = await axios.get('https://prayas-api.i4ulabs.com/api/validateQR', {
         params: {
           encrypted: encodeURIComponent(qrResult),
           mobile,
