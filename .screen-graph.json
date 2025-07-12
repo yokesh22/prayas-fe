@@ -49,7 +49,8 @@
       "label": "Login",
       "routes": [
         "/login"
-      ]
+      ],
+      "dataModelId": "95:44"
     }
   ],
   "edges": [
