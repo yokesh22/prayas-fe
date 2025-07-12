@@ -1,17 +1,50 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Html5Qrcode } from 'html5-qrcode';
 import axios from 'axios';
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  Typography,
+} from '@mui/material';
 
 export const QRScanner: React.FC = () => {
-  const [mobile, setMobile] = useState('');
   const [qrResult, setQrResult] = useState('');
   const [validated, setValidated] = useState<any>(null);
   const [error, setError] = useState('');
   const [scanning, setScanning] = useState(true);
+  const [showDialog, setShowDialog] = useState(false);
   const scannerRef = useRef<Html5Qrcode | null>(null);
   const hasScannedRef = useRef(false);
+  const stallno = localStorage.getItem('stallno');
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
-  // 👇 useCallback to reuse the function reference
+
+  const validateQR = async (qrText: string) => {
+    if (!stallno) {
+      setError('Stall number not found in localStorage');
+      return;
+    }
+
+    try {
+      const res = await axios.get(`${baseURL}/api/validateQR`, {
+        params: {
+          encrypted: encodeURIComponent(qrText),
+          stall: stallno,
+        },
+      });
+      console.log('Validation response:', res.data);
+      setValidated(res.data);
+      setShowDialog(true); // 👉 show popup
+      setError('');
+    } catch (err: any) {
+      setError('Validation failed');
+      setValidated(null);
+    }
+  };
+
   const initScanner = useCallback(async () => {
     const config = { fps: 10, qrbox: 250 };
     const cameraConfig = { facingMode: 'environment' };
@@ -24,8 +57,7 @@ export const QRScanner: React.FC = () => {
       }
 
       if (!scannerRef.current) {
-        const scanner = new Html5Qrcode('reader');
-        scannerRef.current = scanner;
+        scannerRef.current = new Html5Qrcode('reader');
       }
 
       await scannerRef.current.start(
@@ -33,9 +65,10 @@ export const QRScanner: React.FC = () => {
         config,
         (decodedText) => {
           if (!hasScannedRef.current) {
-            setQrResult(decodedText);
             hasScannedRef.current = true;
             setScanning(false);
+            setQrResult(decodedText);
+            validateQR(decodedText);
           }
         },
         (errorMessage) => {
@@ -50,41 +83,10 @@ export const QRScanner: React.FC = () => {
 
   useEffect(() => {
     initScanner();
-
     return () => {
       scannerRef.current?.stop().catch(() => {});
     };
   }, [initScanner]);
-
-  const handleSubmit = async () => {
-    scannerRef.current?.stop().catch(() => {});
-    if (!qrResult || !mobile) {
-      setError('Please scan a QR code and enter mobile number');
-      return;
-    }
-
-    try {
-    //   const res = await axios.get('http://localhost:5002/api/validateQR', {
-    //     params: {
-    //       encrypted: encodeURIComponent(qrResult),
-    //       mobile,
-    //     },
-    //   });
-
-    const res = await axios.get('https://prayas-api.i4ulabs.com/api/validateQR', {
-        params: {
-          encrypted: encodeURIComponent(qrResult),
-          mobile,
-        },
-      });
-
-      setValidated(res.data);
-      setError('');
-    } catch (err: any) {
-      setError('Validation failed');
-      setValidated(null);
-    }
-  };
 
   const handleRescan = async () => {
     setQrResult('');
@@ -93,12 +95,17 @@ export const QRScanner: React.FC = () => {
     hasScannedRef.current = false;
     setScanning(true);
     await scannerRef.current?.stop().catch(() => {});
-    await initScanner(); // now safe to reuse
+    await initScanner();
+  };
+
+  const handleCloseDialog = () => {
+    setShowDialog(false);
+    handleRescan(); // restart scanning
   };
 
   return (
     <div className="max-w-md mx-auto p-4 space-y-4">
-      <h2 className="text-xl font-semibold text-center">QR Validator</h2>
+      <h2 className="text-xl font-semibold text-center">Prayaas 2025</h2>
 
       {scanning && (
         <div id="reader" className="w-full rounded border" style={{ minHeight: '280px' }} />
@@ -109,22 +116,6 @@ export const QRScanner: React.FC = () => {
           <p className="text-sm break-all">Scanned QR: <strong>{qrResult}</strong></p>
         </div>
       )}
-
-      <input
-        type="tel"
-        value={mobile}
-        onChange={(e) => setMobile(e.target.value)}
-        placeholder="Enter registered mobile number"
-        className="border p-2 rounded w-full"
-      />
-
-      <button
-        onClick={handleSubmit}
-        disabled={!qrResult || !mobile}
-        className="bg-blue-600 text-white w-full p-2 rounded hover:bg-blue-700 disabled:opacity-50"
-      >
-        Validate QR
-      </button>
 
       {!scanning && (
         <button
@@ -137,11 +128,29 @@ export const QRScanner: React.FC = () => {
 
       {error && <p className="text-red-600 font-bold">{error}</p>}
 
-      {validated && (
-        <div className="bg-green-100 p-3 rounded">
-          <h3 className="text-green-500 font-bold text-center">QR Code Verified</h3>
-        </div>
-      )}
+      {/* ✅ MUI Dialog for success */}
+      <Dialog open={showDialog} onClose={handleCloseDialog}>
+        <DialogTitle>Thanks for coming</DialogTitle>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+            <strong>Name:</strong> {validated?.data?.name}
+          </Typography>
+          <Typography gutterBottom>
+            <strong>Phone:</strong> {validated?.data?.phone}
+          </Typography>
+          <Typography gutterBottom>
+            <strong>Village:</strong> {validated?.data?.village}
+          </Typography>
+          <Typography gutterBottom>
+            <strong>Order ID:</strong> {validated?.data?.orderid}
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog} variant="contained" color="primary">
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

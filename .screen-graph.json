@@ -43,6 +43,13 @@
       "routes": [
         "/privacy-policy"
       ]
+    },
+    {
+      "id": "src/routes/StallLogin/Login.tsx",
+      "label": "Login",
+      "routes": [
+        "/login"
+      ]
     }
   ],
   "edges": [

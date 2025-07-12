@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 export const GlimpsesFromPravasa2024Section = (): JSX.Element => {
+  
   return (
     <Box
       sx={{
@@ -44,6 +45,7 @@ export const GlimpsesFromPravasa2024Section = (): JSX.Element => {
           zIndex: 1,
         }}
       >
+        
         {/* Text content */}
         <Box
           sx={{

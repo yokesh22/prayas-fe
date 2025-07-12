@@ -84,7 +84,10 @@ export const ExhibitorsPage = (): JSX.Element => {
             alt="Mask group"
             width="100%"
             height="702px"
-          />
+          >
+
+              
+          </Box>
           <Divider sx={{ bgcolor: "#967353" }} />
 
           <SiteMapSection />

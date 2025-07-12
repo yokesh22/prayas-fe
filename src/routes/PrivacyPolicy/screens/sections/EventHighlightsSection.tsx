@@ -19,7 +19,7 @@ import { MobileMenu } from "../../../../components/MobileMenu";
 // Navigation menu items data
 const navItems = [
   { name: "HOME", active: false, path: "/" },
-  { name: "EXHIBITORS", active: true, path: "/exhibitors" },
+  { name: "EXHIBITORS", active: false, path: "/exhibitors" },
 ];
 
 // Mobile header component

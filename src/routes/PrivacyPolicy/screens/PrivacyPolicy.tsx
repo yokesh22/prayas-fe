@@ -1,6 +1,7 @@
 import { Box, Container, Divider, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
-import { RegistrationHeaderSection } from "../../Registration/screens/sections/RegistrationHeaderSection";
+import { EventHighlightsSection } from "./sections/EventHighlightsSection";
+
 import { VisitorDetailsSection } from "../../Registration/screens/sections/VisitorDetailsSection";
 
 export const PrivacyPolicy = (): JSX.Element => {
@@ -82,13 +83,16 @@ export const PrivacyPolicy = (): JSX.Element => {
         flexDirection: "column",
         minHeight: "100vh",
         width: "100%",
+        position:"relative"
       }}
     >
-      <RegistrationHeaderSection />
+      <EventHighlightsSection />
 
-      <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 } }}>
-        <Paper elevation={0} sx={{ p: { xs: 2, md: 4 }, borderRadius: 2 }}>
-          <Box sx={{ mb: 4 }}>
+      <Container   maxWidth="lg" sx={{ py: { xs: 3, md: 5 },paddingTop:"200px" }}>
+        <Paper elevation={0}  sx={{ p: { xs: 2, md: 4 }, borderRadius: 2 , paddingTop:"150px"}} >
+          <Box sx={{ mb: 4, 
+            position:"relative" ,top:"50px"
+           }  }>
             <Box sx={{ width: "100%", height: 50, mb: 1 }}>
               <Typography
                 variant="h4"
@@ -118,7 +122,7 @@ export const PrivacyPolicy = (): JSX.Element => {
             </Typography>
           </Box>
 
-          <Stack spacing={3}>
+          <Stack spacing={3} sx={{ pt: 5 }}>
             {sections.map((section) => (
               <Box key={section.id}>
                 <Typography

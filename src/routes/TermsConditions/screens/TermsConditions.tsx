@@ -1,6 +1,6 @@
 import { Box, Container, Divider, Paper, Typography } from "@mui/material";
 import React from "react";
-import { RegistrationHeaderSection } from "../../Registration/screens/sections/RegistrationHeaderSection";
+import { EventHighlightsSection } from "../../PrivacyPolicy/screens/sections/EventHighlightsSection";
 import { VisitorDetailsSection } from "../../Registration/screens/sections/VisitorDetailsSection";
 
 export const TermsConditions = (): JSX.Element => {
@@ -75,11 +75,11 @@ export const TermsConditions = (): JSX.Element => {
         width: "100%",
       }}
     >
-      <RegistrationHeaderSection />
+      <EventHighlightsSection />
 
       <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 } }}>
         <Paper elevation={0} sx={{ p: { xs: 2, md: 4 }, borderRadius: 2 }}>
-          <Box sx={{ mb: 4 }}>
+          <Box sx={{ mb: 4, position:"relative" ,top:"50px" }}>
             <Box sx={{ width: "100%", height: 50, mb: 1 }}>
               <Typography
                 variant="h4"
@@ -110,7 +110,7 @@ export const TermsConditions = (): JSX.Element => {
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 3, pt: 5 }}>
             {sections.map((section) => (
               <Box key={section.id}>
                 <Typography

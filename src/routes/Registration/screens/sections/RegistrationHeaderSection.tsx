@@ -63,11 +63,11 @@ export const RegistrationHeaderSection = (): JSX.Element => {
           <Stack 
             direction="row" 
             alignItems="center" 
-            spacing={{ xs: 1, md: 2.25 }}
+            spacing={{ xs: 4, md: 2.25 }}
             sx={{ display: { xs: 'none', md: 'flex' } }}
           >
             {/* Navigation Menu */}
-            <Stack direction="row" spacing={11} mr={4}>
+            <Stack direction="row" spacing={2} mr={4} alignItems="center" >
               {navItems.map((item) => (
                 <Link 
                   key={item.name} 
@@ -77,7 +77,8 @@ export const RegistrationHeaderSection = (): JSX.Element => {
                   <Stack
                     direction="column"
                     alignItems="center"
-                    spacing={0.875}
+                    spacing={0.5}
+                    paddingTop={1.25}
                   >
                     <Typography
                       variant="h6"

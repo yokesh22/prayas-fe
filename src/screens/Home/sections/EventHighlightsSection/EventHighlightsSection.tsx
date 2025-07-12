@@ -169,20 +169,20 @@ const HeaderDesktop = () => {
           <Stack 
             direction="row" 
             alignItems="center" 
-            spacing={2.25}
+            spacing={4.25}
           >
             {/* Navigation Menu */}
-            <Stack direction="row" spacing={11} mr={4}>
+            <Stack direction="row" spacing={2} mr={4} alignItems="center"  >
               {navItems.map((item) => (
                 <Link 
                   key={item.name} 
                   to={item.path} 
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
+                  style={{ textDecoration: 'none', color: 'inherit' }} >
                   <Stack
                     direction="column"
                     alignItems="center"
-                    spacing={0.875}
+                    spacing={0.5}
+                    paddingTop={1.25}
                   >
                     <Typography
                       variant="h6"
@@ -191,6 +191,7 @@ const HeaderDesktop = () => {
                         fontSize: "22px",
                         fontWeight: item.active ? "bold" : "normal",
                         textAlign: "center",
+                        height: "100%",                 
                       }}
                     >
                       {item.name}

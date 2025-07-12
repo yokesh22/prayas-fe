@@ -7,6 +7,7 @@ import { PrivacyPolicy } from "./PrivacyPolicy/screens/PrivacyPolicy";
 import { Registration } from "./Registration/screens/Registration";
 import { TermsConditions } from "./TermsConditions/screens/TermsConditions";
 import { QRScanner } from "./QrValidator/screens/QRValidator";
+import StallLoginForm from "./StallLogin/Login";
 
 export const AppRoutes = (): JSX.Element => {
   return (
@@ -18,6 +19,7 @@ export const AppRoutes = (): JSX.Element => {
       <Route path="/terms-conditions" element={<TermsConditions />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/validateQR" element={<QRScanner />} />
+      <Route path='/login' element={<StallLoginForm/>} />
     </Routes>
   );
 };

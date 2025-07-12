@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import React from "react";
-import { RegistrationHeaderSection } from "../../Registration/screens/sections/RegistrationHeaderSection";
+import { EventHighlightsSection } from "../../PrivacyPolicy/screens/sections/EventHighlightsSection";
 import { VisitorDetailsSection } from "../../Registration/screens/sections/VisitorDetailsSection";
 
 export const AboutUs = (): JSX.Element => {
@@ -14,18 +14,20 @@ export const AboutUs = (): JSX.Element => {
         width: "100%",
       }}
     >
-      <RegistrationHeaderSection />
+      <EventHighlightsSection />
 
       <Box
         sx={{
           bgcolor: "background.paper",
-          py: 7.5,
+          py: 2.5,
           width: "100%",
           flex: 1,
+          position:"relative",
+          top:"150px"
         }}
       >
         <Container maxWidth="lg">
-          <Stack spacing={6} alignItems="center">
+          <Stack spacing={1} alignItems="center">
             <Typography
               variant="h4"
               component="h1"
